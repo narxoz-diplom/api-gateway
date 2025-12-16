@@ -4,34 +4,10 @@ server:
 spring:
   application:
     name: api-gateway
-  cloud:
-    gateway:
-      routes:
-        - id: auth-service
-          uri: ${AUTH_SERVICE_URL:http://localhost:8084}
-          predicates:
-            - Path=/api/auth/**
-        - id: file-service
-          uri: ${FILE_SERVICE_URL:http://localhost:8081}
-          predicates:
-            - Path=/api/files/**,/api/courses/**
-        - id: notification-service
-          uri: ${NOTIFICATION_SERVICE_URL:http://localhost:8082}
-          predicates:
-            - Path=/api/notifications/**
-      globalcors:
-        corsConfigurations:
-          '[/**]':
-            allowedOrigins: "*"
-            allowedMethods:
-              - GET
-              - POST
-              - PUT
-              - PATCH
-              - DELETE
-              - OPTIONS
-            allowedHeaders: "*"
-            allowCredentials: false
+
+AUTH_SERVICE_URL: 'http://localhost:8084'
+FILE_SERVICE_URL: 'http://localhost:8081'
+NOTIFICATION_SERVICE_URL: 'http://localhost:8082'
 
 keycloak:
   url: ${KEYCLOAK_URL:http://localhost:8080}
@@ -43,13 +19,12 @@ management:
     web:
       exposure:
         include: health,info,prometheus,metrics
-  metrics:
-    export:
-      prometheus:
+  prometheus:
+    metrics:
+      export:
         enabled: true
 
 logging:
   level:
     org.springframework.cloud.gateway: DEBUG
     org.springframework.web: INFO
-
