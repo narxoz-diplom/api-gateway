@@ -23,8 +23,3 @@ management:
     metrics:
       export:
         enabled: true
-
-logging:
-  level:
-    org.springframework.cloud.gateway: DEBUG
-    org.springframework.web: INFO
