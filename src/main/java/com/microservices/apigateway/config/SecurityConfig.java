@@ -3,6 +3,7 @@ package com.microservices.apigateway.config;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
 import org.springframework.security.web.server.SecurityWebFilterChain;
@@ -17,8 +18,9 @@ public class SecurityConfig {
     @Bean
     public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http) {
         http
-            .csrf(csrf -> csrf.disable())
+            .csrf(ServerHttpSecurity.CsrfSpec::disable)
             .authorizeExchange(exchanges -> exchanges
+                .pathMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .pathMatchers("/actuator/**", "/health", "/api/auth/register", "/api/auth/login", "/api/auth/refresh").permitAll()
                 .anyExchange().authenticated()
             )
