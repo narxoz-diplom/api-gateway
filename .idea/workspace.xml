@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a4eeac5-7f24-460e-b6b4-df78fa1fd338" name="Changes" comment="feat: added auth service configs">
+    <list default="true" id="0a4eeac5-7f24-460e-b6b4-df78fa1fd338" name="Changes" comment="fix: gitignore">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/microservices/apigateway/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/microservices/apigateway/config/SecurityConfig.java" afterDir="false" />
     </list>
@@ -55,6 +55,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="api-gateway" />
@@ -81,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1765826207648</updated>
       <workItem from="1765826208699" duration="754000" />
-      <workItem from="1765876220789" duration="6644000" />
+      <workItem from="1765876220789" duration="13616000" />
     </task>
     <task id="LOCAL-00001" summary="feat: added auth service configs">
       <option name="closed" value="true" />
@@ -91,7 +96,31 @@
       <option name="project" value="LOCAL" />
       <updated>1765826265893</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="fix: config for OPTIONS">
+      <option name="closed" value="true" />
+      <created>1765885164678</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1765885164678</updated>
+    </task>
+    <task id="LOCAL-00003" summary="fix: gitignore">
+      <option name="closed" value="true" />
+      <created>1765885224914</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1765885224914</updated>
+    </task>
+    <task id="LOCAL-00004" summary="fix: gitignore">
+      <option name="closed" value="true" />
+      <created>1765885271428</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1765885271428</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,6 +129,8 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <MESSAGE value="feat: added auth service configs" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: added auth service configs" />
+    <MESSAGE value="fix: config for OPTIONS" />
+    <MESSAGE value="fix: gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: gitignore" />
   </component>
 </project>
