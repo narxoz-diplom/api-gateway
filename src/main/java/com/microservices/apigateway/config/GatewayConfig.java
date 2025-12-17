@@ -15,6 +15,9 @@ public class GatewayConfig {
     @Value("${FILE_SERVICE_URL:http://localhost:8081}")
     private String fileServiceUrl;
 
+    @Value("${COURSE_SERVICE_URL:http://localhost:8085}")
+    private String courseServiceUrl;
+
     @Value("${NOTIFICATION_SERVICE_URL:http://localhost:8082}")
     private String notificationServiceUrl;
 
@@ -29,10 +32,14 @@ public class GatewayConfig {
                 .route("file-service", r -> r
                         .path("/api/files/**")
                         .uri(fileServiceUrl))
+                
+                .route("file-service-videos", r -> r
+                        .path("/api/files/videos/**")
+                        .uri(fileServiceUrl))
 
                 .route("courses-service", r -> r
                         .path("/api/courses/**")
-                        .uri(fileServiceUrl))
+                        .uri(courseServiceUrl))
 
                 .route("notification-service", r -> r
                         .path("/api/notifications/**")
@@ -41,3 +48,4 @@ public class GatewayConfig {
                 .build();
     }
 }
+
