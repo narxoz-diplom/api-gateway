@@ -21,6 +21,9 @@ public class GatewayConfig {
     @Value("${NOTIFICATION_SERVICE_URL:http://localhost:8082}")
     private String notificationServiceUrl;
 
+    @Value("${RAG_SERVICE_URL:http://localhost:8000}")
+    private String ragServiceUrl;
+
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
@@ -44,6 +47,19 @@ public class GatewayConfig {
                 .route("notification-service", r -> r
                         .path("/api/notifications/**")
                         .uri(notificationServiceUrl))
+
+                .route("rag-service-root", r -> r
+                        .path("/api/rag")
+                        .filters(f -> f.setPath("/"))
+                        .uri(ragServiceUrl))
+                .route("rag-service-root-slash", r -> r
+                        .path("/api/rag/")
+                        .filters(f -> f.setPath("/"))
+                        .uri(ragServiceUrl))
+                .route("rag-service", r -> r
+                        .path("/api/rag/**")
+                        .filters(f -> f.rewritePath("/api/rag(?<segment>.*)", "${segment}"))
+                        .uri(ragServiceUrl))
 
                 .build();
     }

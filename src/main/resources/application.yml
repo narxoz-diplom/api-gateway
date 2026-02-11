@@ -5,14 +5,15 @@ spring:
   application:
     name: api-gateway
 
+# URL сервисов. Локально: localhost. Если gateway в Docker, а сервисы на хосте: host.docker.internal.
+# Обязательно запустите auth-service на 8084 перед вызовами /api/auth/*.
 AUTH_SERVICE_URL: 'http://localhost:8084'
 FILE_SERVICE_URL: 'http://localhost:8081'
 NOTIFICATION_SERVICE_URL: 'http://localhost:8082'
+RAG_SERVICE_URL: 'http://localhost:8000'
 
-keycloak:
-  url: ${KEYCLOAK_URL:http://localhost:8080}
-  realm: microservices-realm
-  jwks-uri: ${KEYCLOAK_JWKS_URI:http://localhost:8080/realms/microservices-realm/protocol/openid-connect/certs}
+jwt:
+  secret: ${JWT_SECRET:your-256-bit-secret-change-in-production-min-32-chars}
 
 management:
   endpoints:
