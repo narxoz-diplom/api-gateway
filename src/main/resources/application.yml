@@ -9,6 +9,7 @@ spring:
 # Обязательно запустите auth-service на 8084 перед вызовами /api/auth/*.
 AUTH_SERVICE_URL: 'http://localhost:8084'
 FILE_SERVICE_URL: 'http://localhost:8081'
+COURSE_SERVICE_URL: 'http://localhost:8085'
 NOTIFICATION_SERVICE_URL: 'http://localhost:8082'
 RAG_SERVICE_URL: 'http://localhost:8000'
 
