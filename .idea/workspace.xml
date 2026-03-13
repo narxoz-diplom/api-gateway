@@ -4,13 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0a4eeac5-7f24-460e-b6b4-df78fa1fd338" name="Changes" comment="feat: adapted to new architecture of backend">
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+    <list default="true" id="0a4eeac5-7f24-460e-b6b4-df78fa1fd338" name="Changes" comment="feat: generate tests and lessons">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="16" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -24,9 +27,13 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/narxoz-diplom/api-gateway.git&quot;,
-    &quot;accountId&quot;: &quot;368fc79c-f8a3-4d8e-9533-8ca516d327f9&quot;
+    &quot;accountId&quot;: &quot;1ed56de2-6ba9-4fbd-9364-612e0970a921&quot;
   }
 }</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 4
 }</component>
@@ -41,10 +48,14 @@
     &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
     &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
     &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
     &quot;Spring Boot.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/beibitmuzappar/Desktop/Diplom/api-gateway&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -55,6 +66,7 @@
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -75,7 +87,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.31033.145" />
       </set>
     </attachedChunks>
   </component>
@@ -92,6 +105,14 @@
       <workItem from="1765905761424" duration="31000" />
       <workItem from="1765905832824" duration="3097000" />
       <workItem from="1765963422144" duration="2877000" />
+      <workItem from="1771911432832" duration="379000" />
+      <workItem from="1772616481648" duration="4689000" />
+      <workItem from="1772787044160" duration="1637000" />
+      <workItem from="1773073724822" duration="617000" />
+      <workItem from="1773154862337" duration="1661000" />
+      <workItem from="1773213133658" duration="1354000" />
+      <workItem from="1773303937262" duration="599000" />
+      <workItem from="1773397534192" duration="1587000" />
     </task>
     <task id="LOCAL-00001" summary="feat: added auth service configs">
       <option name="closed" value="true" />
@@ -149,7 +170,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765966160064</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="feat: generate tests and lessons">
+      <option name="closed" value="true" />
+      <created>1771837976678</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1771837976678</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,6 +192,15 @@
     <MESSAGE value="feat: gateway config from yaml to Bean" />
     <MESSAGE value="fix: imports and configs" />
     <MESSAGE value="feat: adapted to new architecture of backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: adapted to new architecture of backend" />
+    <MESSAGE value="feat: generate tests and lessons" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: generate tests and lessons" />
+  </component>
+  <component name="github-copilot-workspace">
+    <instructionFileLocations>
+      <option value=".github/instructions" />
+    </instructionFileLocations>
+    <promptFileLocations>
+      <option value=".github/prompts" />
+    </promptFileLocations>
   </component>
 </project>
