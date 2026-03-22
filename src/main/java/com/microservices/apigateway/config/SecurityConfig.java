@@ -28,6 +28,7 @@ public class SecurityConfig {
             .authorizeExchange(exchanges -> exchanges
                 .pathMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .pathMatchers("/actuator/**", "/health", "/api/auth/register", "/api/auth/login", "/api/auth/refresh").permitAll()
+                .pathMatchers("/api/ag-ui/**").permitAll()
                 .pathMatchers("/api/files/videos/*/stream").permitAll()
                 .anyExchange().authenticated()
             )
