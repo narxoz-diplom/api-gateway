@@ -12,6 +12,7 @@ FILE_SERVICE_URL: 'http://localhost:8081'
 COURSE_SERVICE_URL: 'http://localhost:8085'
 NOTIFICATION_SERVICE_URL: 'http://localhost:8082'
 RAG_SERVICE_URL: 'http://localhost:8000'
+AG_UI_AGENT_URL: 'http://localhost:5001'
 
 jwt:
   secret: ${JWT_SECRET:your-256-bit-secret-change-in-production-min-32-chars}
