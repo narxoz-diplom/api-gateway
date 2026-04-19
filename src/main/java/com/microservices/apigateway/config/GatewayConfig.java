@@ -51,6 +51,10 @@ public class GatewayConfig {
                         .path("/api/notifications/**")
                         .uri(notificationServiceUrl))
 
+                .route("course-service-news", r -> r
+                        .path("/api/news/**")
+                        .uri(courseServiceUrl))
+
                 .route("rag-service-root", r -> r
                         .path("/api/rag")
                         .filters(f -> f.setPath("/"))
