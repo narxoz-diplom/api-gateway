@@ -24,9 +24,6 @@ public class GatewayConfig {
     @Value("${RAG_SERVICE_URL:http://localhost:8000}")
     private String ragServiceUrl;
 
-    @Value("${AG_UI_AGENT_URL:http://localhost:5001}")
-    private String agUiAgentUrl;
-
     @Bean
     public RouteLocator customRouteLocator(RouteLocatorBuilder builder) {
         return builder.routes()
@@ -68,10 +65,14 @@ public class GatewayConfig {
                         .filters(f -> f.rewritePath("/api/rag(?<segment>.*)", "${segment}"))
                         .uri(ragServiceUrl))
 
-                .route("ag-ui-agent", r -> r
+                .route("rag-service-ag-ui-root", r -> r
+                        .path("/api/ag-ui", "/api/ag-ui/")
+                        .filters(f -> f.setPath("/api/v1/ag-ui"))
+                        .uri(ragServiceUrl))
+                .route("rag-service-ag-ui", r -> r
                         .path("/api/ag-ui/**")
-                        .filters(f -> f.rewritePath("/api/ag-ui(?<segment>.*)", "${segment}"))
-                        .uri(agUiAgentUrl))
+                        .filters(f -> f.rewritePath("/api/ag-ui(?<segment>.*)", "/api/v1/ag-ui${segment}"))
+                        .uri(ragServiceUrl))
 
                 .build();
     }
