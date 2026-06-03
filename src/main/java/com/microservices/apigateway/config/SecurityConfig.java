@@ -29,7 +29,7 @@ public class SecurityConfig {
                 .pathMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .pathMatchers("/actuator/**", "/health", "/api/auth/register", "/api/auth/login", "/api/auth/refresh").permitAll()
                 .pathMatchers("/api/ag-ui/**").permitAll()
-                // Public file content (e.g., news images) - <img> doesn't send Authorization header
+                // Public file content (e.g., news images)
                 .pathMatchers(HttpMethod.GET, "/api/files/*/content").permitAll()
                 .pathMatchers("/api/files/videos/*/stream").permitAll()
                 .anyExchange().authenticated()

@@ -8,10 +8,6 @@ import org.springframework.web.reactive.function.server.ServerRequest;
 import java.net.ConnectException;
 import java.util.Map;
 
-/**
- * Maps connection failures (e.g. downstream service not running) to 503 Service Unavailable
- * instead of 500, so the client gets a clear "service unavailable" response.
- */
 @Component
 public class GatewayErrorAttributes extends DefaultErrorAttributes {
 

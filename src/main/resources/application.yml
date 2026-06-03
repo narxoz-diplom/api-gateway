@@ -5,8 +5,6 @@ spring:
   application:
     name: api-gateway
 
-# URL сервисов. Локально: localhost. Если gateway в Docker, а сервисы на хосте: host.docker.internal.
-# Обязательно запустите auth-service на 8084 перед вызовами /api/auth/*.
 AUTH_SERVICE_URL: 'http://localhost:8084'
 FILE_SERVICE_URL: 'http://localhost:8081'
 COURSE_SERVICE_URL: 'http://localhost:8085'
