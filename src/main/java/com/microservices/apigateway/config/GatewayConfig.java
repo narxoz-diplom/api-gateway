@@ -44,6 +44,14 @@ public class GatewayConfig {
                         .path("/api/courses/**")
                         .uri(courseServiceUrl))
 
+                .route("grades-service", r -> r
+                        .path("/api/grades/**")
+                        .uri(courseServiceUrl))
+
+                .route("teacher-grades-service", r -> r
+                        .path("/api/teacher/**")
+                        .uri(courseServiceUrl))
+
                 .route("notification-service", r -> r
                         .path("/api/notifications/**")
                         .uri(notificationServiceUrl))
