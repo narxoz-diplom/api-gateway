@@ -28,10 +28,8 @@ public class SecurityConfig {
             .authorizeExchange(exchanges -> exchanges
                 .pathMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                 .pathMatchers("/actuator/**", "/health", "/api/auth/register", "/api/auth/login", "/api/auth/refresh").permitAll()
-                .pathMatchers("/api/ag-ui/**").permitAll()
-                // Public file content (e.g., news images)
+                // Public file content (e.g., news images) — authorization enforced in file-service
                 .pathMatchers(HttpMethod.GET, "/api/files/*/content").permitAll()
-                .pathMatchers("/api/files/videos/*/stream").permitAll()
                 .anyExchange().authenticated()
             )
             .oauth2ResourceServer(oauth2 -> oauth2
