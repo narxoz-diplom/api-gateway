@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
 import org.springframework.security.config.web.server.ServerHttpSecurity;
+import org.springframework.security.oauth2.server.resource.web.server.authentication.ServerBearerTokenAuthenticationConverter;
 import org.springframework.security.web.server.SecurityWebFilterChain;
 import org.springframework.security.oauth2.jwt.ReactiveJwtDecoder;
 
@@ -12,8 +13,22 @@ import org.springframework.security.oauth2.jwt.ReactiveJwtDecoder;
 @EnableWebFluxSecurity
 public class SecurityConfig {
 
+    /**
+     * HTML media tags ({@code <video>}, {@code <audio>}) cannot send Authorization headers.
+     * Frontend appends {@code ?access_token=} — mirror file-service BearerTokenConfig.
+     */
     @Bean
-    public SecurityWebFilterChain securityWebFilterChain(ServerHttpSecurity http, ReactiveJwtDecoder reactiveJwtDecoder) {
+    public ServerBearerTokenAuthenticationConverter serverBearerTokenAuthenticationConverter() {
+        ServerBearerTokenAuthenticationConverter converter = new ServerBearerTokenAuthenticationConverter();
+        converter.setAllowUriQueryParameter(true);
+        return converter;
+    }
+
+    @Bean
+    public SecurityWebFilterChain securityWebFilterChain(
+            ServerHttpSecurity http,
+            ReactiveJwtDecoder reactiveJwtDecoder,
+            ServerBearerTokenAuthenticationConverter serverBearerTokenAuthenticationConverter) {
         http
             .csrf(ServerHttpSecurity.CsrfSpec::disable)
             .cors(cors -> cors.configurationSource(exchange -> {
@@ -33,6 +48,7 @@ public class SecurityConfig {
                 .anyExchange().authenticated()
             )
             .oauth2ResourceServer(oauth2 -> oauth2
+                .bearerTokenConverter(serverBearerTokenAuthenticationConverter)
                 .jwt(jwt -> jwt.jwtDecoder(reactiveJwtDecoder))
             );
 
